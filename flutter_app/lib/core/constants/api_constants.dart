@@ -1,19 +1,33 @@
 import 'package:flutter/foundation.dart';
 
 class ApiConstants {
-  // Base URLs tailored for different environments:
-  // - Android Emulator: 10.0.2.2 points to host machine localhost
-  // - iOS Simulator / Web / Desktop: localhost points to host
-  // - Real physical phone: replace with your local Wi-Fi IP (e.g. 192.168.1.15:5000)
+  // Production Render Backend URL
+  static const String productionBaseUrl = 'https://sankargroup-backend.onrender.com/api';
+
+  // Local development URLs
+  static const String _localWebDesktopUrl = 'http://localhost:5000/api';
+  static const String _localAndroidUrl = 'http://10.0.2.2:5000/api';
+
+  // Toggle between cloud production backend and local server
+  static const bool useProduction = true;
+
+  // Active Base URL
   static String get baseUrl {
+    if (useProduction) {
+      return productionBaseUrl;
+    }
+
     if (kIsWeb) {
-      return 'http://localhost:5000/api';
+      return _localWebDesktopUrl;
     } else if (defaultTargetPlatform == TargetPlatform.android) {
-      return 'http://10.0.2.2:5000/api';
+      return _localAndroidUrl;
     } else {
-      return 'http://localhost:5000/api';
+      return _localWebDesktopUrl;
     }
   }
+
+  // Health check endpoint
+  static const String healthEndpoint = '/health';
 
   // Auth endpoints
   static const String loginEndpoint = '/auth/login';
@@ -25,6 +39,6 @@ class ApiConstants {
   static const String statsEndpoint = '/items/stats';
   static const String categoriesEndpoint = '/items/categories';
 
-  // Timeout duration
-  static const Duration requestTimeout = Duration(seconds: 10);
+  // Timeout duration (45 seconds to accommodate Render free-tier cold starts)
+  static const Duration requestTimeout = Duration(seconds: 45);
 }
