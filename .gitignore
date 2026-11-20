@@ -1,0 +1,30 @@
+# Node.js
+backend/node_modules/
+backend/.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Flutter / Dart
+flutter_app/.dart_tool/
+flutter_app/.flutter-plugins
+flutter_app/.flutter-plugins-dependencies
+flutter_app/.packages
+flutter_app/.pub-cache/
+flutter_app/.pub/
+flutter_app/build/
+flutter_app/ios/Pods/
+flutter_app/ios/.symlinks/
+flutter_app/ios/Flutter/Flutter.framework
+flutter_app/ios/Flutter/Flutter.podspec
+flutter_app/android/.gradle
+flutter_app/android/local.properties
+
+# IDE & OS files
+.idea/
+.vscode/
+*.swp
+*.lock
+*.log
+.DS_Store
+Thumbs.db

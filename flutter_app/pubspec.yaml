@@ -1,0 +1,31 @@
+name: sankar_group
+description: "Clean, professional, and maintainable Flutter app with Node.js and MongoDB Atlas backend."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # State Management
+  provider: ^6.1.2
+  # Local Storage & Persistence
+  shared_preferences: ^2.3.2
+  # HTTP Client
+  http: ^1.2.2
+  # Typography
+  google_fonts: ^6.2.1
+  # Formatting (Currency, dates)
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

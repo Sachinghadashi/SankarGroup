@@ -1,0 +1,11 @@
+{
+  "name": "Nexus Market",
+  "short_name": "Nexus",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#4F46E5",
+  "theme_color": "#4F46E5",
+  "description": "Products and Services Marketplace Flutter Project with Node.js and MongoDB Atlas",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false
+}
